@@ -13,7 +13,7 @@ use Illuminate\Queue\SerializesModels;
 
 class TaskCompleted
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable, InteractsWithSockets, SerializesModels  ;
 
     /**
      * Create a new event instance.

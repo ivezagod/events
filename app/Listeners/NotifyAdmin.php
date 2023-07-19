@@ -9,7 +9,7 @@ use Couchbase\Role;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class NotifyAdmin
+class NotifyAdmin implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -27,7 +27,7 @@ class NotifyAdmin
         $post = $event->post;
 
         $users = User::whereHas('role',function ($query){
-            $query->where('role','admin');
+            $query->where('name','admin');
         })->get();
 
         foreach ($users as $user){
